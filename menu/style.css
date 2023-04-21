@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    margin-top: 25vh;
+}
+header{
+    z-index: 10;
+    top: 0;
+    position: fixed;
+    width: 100%;
+    padding: 30px;
+    background-color: white;
+}
+header div{
+    padding: 5px;
+}
+header div h1{
+    text-align: center;
+    font-family:monospace;
+    color: crimson;
+    letter-spacing: 3px;
+
+}
+header ul{
+    margin: auto;
+    display: flex;
+    width: 40%;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+header ul li{
+    list-style-type: none;
+}
+header ul li button{
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 7px;
+    border: 1px solid grey;
+    transition: all 0.1s ease-in-out;
+    font-family:"Roboto", sans-serif;
+    letter-spacing: 2px;
+}
+header ul li button:hover{
+    background-color: white;
+    color: black;
+    top: 2px;
+    left: 2px;
+    /* border-color: crimson; */
+    box-shadow: -4px -2px 1px 1px crimson;
+}
+header ul li button:focus{
+    box-shadow: -4px -2px 1px 1px crimson;
+    
+}
+section{
+    width: 90vw;
+    max-width: 1170px;
+    margin: 0 auto;
+    gap: 3rem 2rem;
+    display: grid;
+    justify-items: center;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+article{
+    position: relative;
+    height: auto;
+    display: grid;
+    max-width: 20vw;
+    gap: 0.5rem 1rem;
+    margin-top: 5vh;
+}
+article .image{
+    box-shadow: 5px 5px 1px 1px rgb(79, 78, 78);
+    height: 22vh;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: contain;
+    transition: 0.6s linear;
+}
+article .image:hover{
+    transform: scale(1.03);
+}
+article .details{
+    width: 100%;
+    padding: 5px;
+    height: 150%;
+    /* display: flex; */
+    justify-content: space-between;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+article .details .price{
+    color: crimson;
+}
+article .details .buyOpt{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+article .details h4{
+    width:100%;
+    height:25%;
+    /* border:1px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+article .details button{
+    padding:1vh 2vh;
+    border-radius: 10px;
+    border: 1px solid #aaa;
+    cursor:pointer;
+    transition: 0.1s linear;
+}
+article .details button:hover{
+    background: rgba(107, 103, 103, 0.44);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.1px);
+-webkit-backdrop-filter: blur(8.1px);
+border: 1px solid transparent;
+box-shadow: -5px 5px 5px #333;
+animation: bounce 1s ease-in infinite;
+}
+@keyframes bounce {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(0.5vh);
+    }
+}
+#shader{
+    width: 30vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba(107, 103, 103, 0.44);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8.1px);
+-webkit-backdrop-filter: blur(8.1px);
+border: 1px solid rgba(107, 103, 103, 0.3);
+    /* z-index: 700; */
+    right: 0;
+    /* top: 0; */
+    /* display: flex; */
+    /* transform: translateY(90%); */
+    transition: 0.3s ease;
+}
+.shader1{
+    top:90%;
+}
+.shader2{
+    top:90%;
+}
+.shader1{
+    /* display:none; */
+}
+.cartBut:hover #shader{
+    top: 0;
+}
+#list{
+    /* border:1px solid red; */ 
+    width: 100%;
+    height:100%;
+    display: grid;
+    /* background: teal; */
+    position: fixed;
+    grid-template-columns: 1fr;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* padding: 10vh 0 ; */
+    /* margin: 5vh 0; */
+}
+#list h1{
+    position: fixed;
+    /* border: 1px solid pink; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top:15vh;
+    width: 100%;
+    text-align: center;
+    height: 10%;
+    color: white;
+    text-shadow: -15px 5px 5px rgb(255, 255, 255, 0.5);
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.5vh;
+    /* font-weight: 700; */
+    z-index: 31;
+    background: rgba(51, 51, 51, 0.74);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.2px);
+-webkit-backdrop-filter: blur(6.2px);
+}
+#list span{
+    overflow: hidden;
+    top: 25vh;
+    position: relative;
+    border: 1px solid rgb(255, 255, 255, 0.3);
+    /* height: 6vh; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background-image: url('./images/nike1.JPG'); */
+    background: rgba(51, 51, 51, 0.74);
+    background-position: center;
+    background-size: cover;
+    z-index: 21;
+    /* padding: 0 50%; */
+}
+#list span p{
+    position: absolute;
+    /* letter-spacing: 1.1px; */
+    font-size: 2.1vh;
+    border:1px solid white;
+    padding: 2vh;
+    border-radius: 1vh;
+    background-color: rgb(170, 170, 170, 0.74);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.2px);
+-webkit-backdrop-filter: blur(6.2px);
+    color: white;
+    text-shadow: 0px 0px 5px #333;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+}
+#list span p:hover{
+    background-color: rgba(249, 243, 243, 0.74);
+    color: rgb(0, 0, 0, 0.8);
+    text-shadow: 0px 0px 5px #aaa;
+}
+
+#total{
+    position: fixed;
+    background: rgba(51, 51, 51, 0.88);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    bottom:10vh;
+    width: 97%;
+    height: 10%;
+    z-index: 50;
+    color: white;
+    font-family: 'Cinzel Decorative', cursive;
+}
+#total h3{
+    
+}
+#total p{
+    
+}
+
+#list span #spanBut i{
+    color: white;
+    font-size: 50vh;
+}
+
+#checkout{
+    position: fixed;
+    background: rgba(51, 51, 51, 0.88);
+/* border-radius: 16px; */
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    border: none;
+    bottom:0;
+    width: 97%;
+    height: 10%;
+    z-index: 50;
+    /* border-radius: 2vh; */
+    padding: 2vh 0;
+    color: white;
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 5vh;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+#checkout:hover{
+    background: rgba(136, 134, 134, 0.88);
+}
